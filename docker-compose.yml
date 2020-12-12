@@ -1,0 +1,23 @@
+# version: '2'
+ 
+# services:
+#     webreact:
+#         build: .
+#         ports: 
+#             - 3333:3333
+#         volumes: 
+#             - /Users/nattapon/Desktop/Covid-19-tracking-master/work
+#         container_name: test-react-compose
+
+version: "2"
+
+services:
+  app:
+    stdin_open: true
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    container_name: react-covid
