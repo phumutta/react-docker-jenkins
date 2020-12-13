@@ -14,7 +14,7 @@ import { shallow } from 'enzyme';
 //   const wrapper = shallow(<App />);
 //   expect(wrapper.find('div').text()).toEqual('TODO NEXT');
 // });
-it('Should display calculator page correctly', () => {
+it('Should display App page correctly', () => {
   const calculator = shallow(<App />)
 
   const div = calculator.find('div')

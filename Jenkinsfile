@@ -8,7 +8,7 @@ pipeline {
     
         stage('GIT PULL') {
             steps { 
-                git 'https://github.com/phumutta/XXXXXXXXXX.git'  
+                git 'https://github.com/phumutta/react-docker-jenkins.git'  
                 sh 'npm install'
 
             }
@@ -21,7 +21,11 @@ pipeline {
         }
         stage('BUILD IMAGE'){
             steps{
-    
+             sh "/usr/local/bin/docker-compose build ."
+             sh "/usr/local/bin/docker images"
+
+             sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline
+
             }
         }
         stage('TEST DOCKER'){
