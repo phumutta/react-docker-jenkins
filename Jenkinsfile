@@ -26,7 +26,7 @@ pipeline {
         }
         stage('BUILD IMAGE'){
             steps{
-             sh "/usr/local/bin/docker-compose build ."
+             sh "/usr/local/bin/docker-compose build"
              sh "/usr/local/bin/docker images"
 
              sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
