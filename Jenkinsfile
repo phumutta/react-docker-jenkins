@@ -37,7 +37,6 @@ pipeline {
         stage('DEPLOY'){
             steps{
              sh "/usr/local/bin/docker push phumutta/react-docker-pipeline"   
-             sh "/usr/local/bin/docker rm react-covid "
              sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
             }
         }
