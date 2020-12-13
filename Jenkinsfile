@@ -1,7 +1,7 @@
 
 pipeline {
      agent any
-     tools {nodejs "node15"}
+     tools {nodejs "node14"}
 
     stages {
         
@@ -12,6 +12,14 @@ pipeline {
                 sh 'Node --version'
 
                 git 'https://github.com/phumutta/react-docker-jenkins.git'  
+                sh 'ls'
+                sh 'npm install'
+
+            }
+        }
+        stage('Install') {
+            steps { 
+               
                 sh 'npm install'
 
             }
