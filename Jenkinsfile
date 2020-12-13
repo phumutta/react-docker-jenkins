@@ -9,6 +9,8 @@ pipeline {
     
         stage('GIT PULL') {
             steps { 
+                sh 'Node --version'
+
                 git 'https://github.com/phumutta/react-docker-jenkins.git'  
                 sh 'npm install'
 
