@@ -12,14 +12,17 @@ pipeline {
                 sh 'Node --version'
 
                 git 'https://github.com/phumutta/react-docker-jenkins.git'  
+                sh 'ls'
                 sh 'npm install'
 
             }
         }
+     
         stage('TEST'){
             steps{
                 sh 'npm test'
-                echo "Testing"
+                sh 'a'
+                sh'q'
             }
         }
         stage('BUILD IMAGE'){
