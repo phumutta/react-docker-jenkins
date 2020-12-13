@@ -26,18 +26,20 @@ pipeline {
         }
         stage('BUILD IMAGE'){
             steps{
-             sh "/usr/local/bin/docker-compose build"
+            //  sh "/usr/local/bin/docker-compose build"
+            sh "/usr/local/bin/docker build -t phumutta/react-docker-pipeline"
              sh "/usr/local/bin/docker images"
 
-             sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
+            //  sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
 
             }
         }
-        // stage('TEST DOCKER'){
-        //     steps{
+        stage('TEST DOCKER'){
+            steps{
+                sh '/usr/local/bin/docker run --name react-covid -p 80:5000 phumutta/react-docker-pipeline'
 
-        //     }
-        // }
+            }
+        }
         // stage('PUSH DOCKER'){
         //     steps{
                                 
