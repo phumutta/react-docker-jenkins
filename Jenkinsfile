@@ -21,8 +21,7 @@ pipeline {
         stage('TEST'){
             steps{
                 sh 'npm test'
-                sh 'a'
-                sh'q'
+              
             }
         }
         stage('BUILD IMAGE'){
