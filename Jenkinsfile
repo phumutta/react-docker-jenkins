@@ -36,10 +36,12 @@ pipeline {
         }
         stage('TEST DOCKER'){
             steps{
-                sh '/usr/local/bin/docker run --name react-covid -p 80:5000 phumutta/react-docker-pipeline'
-
+                sh '/usr/local/bin/docker run  --name react-covid -p 5000:5000 phumutta/react-docker-pipeline'
+                sh "/usr/local/bin/docker rm react-covid "
+                 sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
             }
         }
+
         // stage('PUSH DOCKER'){
         //     steps{
                                 
