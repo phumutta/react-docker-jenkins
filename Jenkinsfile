@@ -28,16 +28,16 @@ pipeline {
 
             }
         }
-        stage('TEST DOCKER'){
-            steps{
+        // stage('TEST DOCKER'){
+        //     steps{
 
-            }
-        }
-        stage('PUSH DOCKER'){
-            steps{
+        //     }
+        // }
+        // stage('PUSH DOCKER'){
+        //     steps{
                                 
-            }
-        }
+        //     }
+        // }
         
     }
     post { 
