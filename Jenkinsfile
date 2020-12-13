@@ -17,17 +17,12 @@ pipeline {
 
             }
         }
-        stage('Install') {
-            steps { 
-               
-                sh 'npm install'
-
-            }
-        }
+     
         stage('TEST'){
             steps{
                 sh 'npm test'
-                echo "Testing"
+                sh 'a'
+                sh'q'
             }
         }
         stage('BUILD IMAGE'){
