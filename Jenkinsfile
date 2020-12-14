@@ -22,6 +22,7 @@ pipeline {
         stage('TEST'){
             steps{
                 sh'cd work'
+                sh 'pwd'
                 sh'ls'
             
               
