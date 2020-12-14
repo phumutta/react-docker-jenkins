@@ -1,4 +1,4 @@
-@Library('pipeline-library-demo')_
+@Library('pipeline-library-react')_
 
 pipeline {
      agent any
