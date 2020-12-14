@@ -1,5 +1,5 @@
 def call() {
-    sh 'cd'
+    sh 'cd work'
     sh 'npm test'
                 
 }
