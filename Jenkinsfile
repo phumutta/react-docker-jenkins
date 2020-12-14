@@ -1,3 +1,4 @@
+@Library('pipeline-library-react')_
 
 pipeline {
      agent any
@@ -9,11 +10,7 @@ pipeline {
     
         stage('GIT PULL') {
             steps { 
-                sh 'Node --version'
-
-                git 'https://github.com/phumutta/react-docker-jenkins.git'  
-                sh 'ls'
-                sh 'npm install'
+               GitPull()
 
             }
         }
@@ -27,17 +24,16 @@ pipeline {
         stage('BUILD IMAGE'){
             steps{
             //  sh "/usr/local/bin/docker-compose build"
-            sh "/usr/local/bin/docker build -t phumutta/react-docker-pipeline ."
-             sh "/usr/local/bin/docker images"
-
+            // sh "/usr/local/bin/docker build -t phumutta/react-docker-pipeline ."
+            //  sh "/usr/local/bin/docker images"
+            BuildImage()
             //  sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
 
             }
         }
         stage('DEPLOY'){
             steps{
-             sh "/usr/local/bin/docker push phumutta/react-docker-pipeline"   
-             sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
+             Deploy()
             }
         }
         
