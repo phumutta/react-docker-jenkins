@@ -10,7 +10,11 @@ pipeline {
     
         stage('GIT PULL') {
             steps { 
-               GitPull()
+            //    GitPull()
+            git 'https://github.com/phumutta/react-docker-jenkins.git'  
+            echo "========Git Pull=========="
+            sh 'npm install'
+            echo "=========install=========="
 
             }
         }
@@ -19,25 +23,25 @@ pipeline {
             steps{
                 sh'cd work'
                 sh'ls'
-             Test()
+            
               
             }
         }
-        stage('BUILD IMAGE'){
-            steps{
-            //  sh "/usr/local/bin/docker-compose build"
-            // sh "/usr/local/bin/docker build -t phumutta/react-docker-pipeline ."
-            //  sh "/usr/local/bin/docker images"
-            BuildImage()
-            //  sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
+        // stage('BUILD IMAGE'){
+        //     steps{
+        //     //  sh "/usr/local/bin/docker-compose build"
+        //     // sh "/usr/local/bin/docker build -t phumutta/react-docker-pipeline ."
+        //     //  sh "/usr/local/bin/docker images"
+        //     BuildImage()
+        //     //  sh "/usr/local/bin/docker rmi phumutta/react-docker-pipeline"
 
-            }
-        }
-        stage('DEPLOY'){
-            steps{
-             Deploy()
-            }
-        }
+        //     }
+        // }
+        // stage('DEPLOY'){
+        //     steps{
+        //      Deploy()
+        //     }
+        // }
         
     }
     post { 
