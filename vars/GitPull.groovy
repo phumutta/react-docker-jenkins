@@ -5,7 +5,8 @@ def call() {
     // git 'https://github.com/phumutta/react-docker-jenkins.git'  
     echo "========Git Pull=========="
  
-    sh 'npm install'
+    sh 'cd work && npm install'
+    
     echo "=========install=========="
                 
 }
