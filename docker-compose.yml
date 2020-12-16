@@ -5,11 +5,11 @@ services:
   react-docker-pipeline:
     stdin_open: true
     build:
-      context: .
+      context: ./work
     image: phumutta/react-docker-pipeline
 
     ports:
       - "3000:3000"
-    volumes:
-      - .:/usr/src/app
+  
+
     container_name: react-covid

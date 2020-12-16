@@ -23,9 +23,10 @@ FROM node:12.20.0-alpine3.10
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY ./work/package.json /usr/src/app
-RUN npm install 
 
+
+
+COPY package.json /usr/src/app
 
 COPY . /usr/src/app
 EXPOSE 3000
